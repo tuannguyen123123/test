@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Export to PDF</title>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+
+</head>
+
+<body>
+<h2> firebase web push Notirication</h2>
+<p id="token">4</p>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
+<script>
+        var firebaseConfig = {
+    apiKey: "AIzaSyBiuBam_SZ_LOTW5QLOmRrO7XdkWRbhDP8",
+    authDomain: "cmc2021-f4f8b.firebaseapp.com",
+    projectId: "cmc2021-f4f8b",
+    storageBucket: "cmc2021-f4f8b.appspot.com",
+    messagingSenderId: "364371829051",
+    appId: "1:364371829051:web:7375833599efa45b9c971e",
+    measurementId: "G-73KBH7SW8L"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+         const messaging = firebase.messaging();
+
+    function IntitalizeFirebaseMessaging(){
+            messaging.requestPermission()
+            .then( function(){
+                console.log("Notification Premisssion");
+                debugger;
+                return messaging.getToken();
+
+            }).then(function(token){
+                console.log("token:"+token);
+                document.getElementById("token").innerText= token;
+
+            }).catch(function(reason){
+                console.log(reason);
+            });
+
+
+    }
+
+
+    messaging.onMessage(function(payload){
+            console.log(payload);
+
+    });
+
+    messaging.onTokenRefresh(function(){
+        messaging.getToken()
+        .then(function(newtoken){
+                console.log("new token: "+newtoken);
+
+
+        }).catch(function(reason){
+            console.log(reason);
+
+        });
+
+    });
+    IntitalizeFirebaseMessaging();
+</script>
+
+</body>
+</html>
