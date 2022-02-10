@@ -17,7 +17,7 @@ var firebaseConfig = {
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.333
-const messaging = firebase.messaging();
+const messaging = firebase.messaging();4444
 
 
  messaging.setBackgroundMessageHandler(function(payload) {
