@@ -24,7 +24,7 @@ const messaging = firebase.messaging();4444
      console.log(payload);
 
  });
-
+444445555
 // messaging.setBackgroundMessageHandler(function(payload) {
 //     console.log(
 //         "[firebase-messaging-sw.js] Received background message ",
