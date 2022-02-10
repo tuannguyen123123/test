@@ -21,7 +21,7 @@ const messaging = firebase.messaging();4444
 
 
  messaging.setBackgroundMessageHandler(function(payload) {
-     console.log(payload);
+     console.log(payload); tessr 5
 
  });
 444445555
