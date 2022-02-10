@@ -11,12 +11,12 @@ var firebaseConfig = {
     messagingSenderId: "364371829051",
     appId: "1:364371829051:web:7375833599efa45b9c971e",
     measurementId: "G-73KBH7SW8L"
-  };tttttttt
+  };tttttttt 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
-// messages.
+// messages.333
 const messaging = firebase.messaging();
 
 
